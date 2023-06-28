@@ -1,6 +1,6 @@
 /* eslint-disable */
 import axios from 'axios'
-const baseUrl = '/api/blogs'
+const baseUrl = 'https://api-blogs-swuo.onrender.com/api/blogs'
 
 let token = null
 
