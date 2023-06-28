@@ -77,7 +77,7 @@ const App = () => {
       title: newTitle,
       author: newAuthor,
       url: newUrl,
-      likes: 0,
+      likes: newLikes,
     }
     //setBlogs(blogs.concat(blogObject))
     console.log("blogs", blogs)

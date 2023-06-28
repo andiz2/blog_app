@@ -27,8 +27,11 @@ articlesRouter.get('/:id', async (request, response, next) => {
 
 articlesRouter.post('/', async (request, response) => {
   const body = request.body
+  console.log('body', body)
 
   const decodedToken = jwt.verify(getTokenFrom(request), process.env.SECRET)
+  console.log('decodedToken', decodedToken)
+
   if (!decodedToken.id) {
     return response.status(401).json({ error: 'token invalid' })
   }
@@ -48,6 +51,10 @@ articlesRouter.post('/', async (request, response) => {
 })
 
 articlesRouter.delete('/:id', async (request, response) => {
+    //adaug doar de test si de console log
+    const body = request.body
+    console.log('body', body)
+    //pana aici
     await Article.findByIdAndRemove(request.params.id)
     response.status(204).end()
 })
